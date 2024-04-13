@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Atividade ChartJs</title>
+
+</head>
+
+<body style="display: flex;">
+
+    <div>
+
+        <canvas id="grafico1" style="position: relative; width: 50vw; height: 60vh;"></canvas>
+
+    </div>
+
+    <div>
+
+        <canvas id="grafico2" style="position: relative; width: 50vw; height: 60vh;"></canvas>
+
+    </div>
+
+    <script>
+        const grafico1 = document.getElementById('grafico1');
+
+        new Chart(grafico1, {
+            type: 'line',
+            data: {
+                labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+                datasets: [{
+                    label: 'Temperatura',
+                    data: [30, 29, 28, 25, 22, 23],
+                    borderColor: 'rgb(255, 0, 0)',
+                    backgroundColor: 'rgb(255, 0, 0)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Umidade',
+                    data: [80, 82, 80, 85, 80, 83],
+                    borderColor: 'rgb(0 , 0, 255)',
+                    backgroundColor: 'rgb(0 , 0, 255)',
+                    borderWidth: 1
+                }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const grafico2 = document.getElementById('grafico2');
+
+        new Chart(grafico2, {
+            type: 'bar',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Juho'],
+                datasets: [{
+                    label: 'Temperatura',
+                    data: [22, 24, 27, 23, 20, 18],
+                    borderColor: 'rgb(255, 0, 0)',
+                    backgroundColor: 'rgb(255, 0, 0)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Umidade',
+                    data: [90, 89, 93, 87, 88, 82],
+                    borderColor: 'rgb(0 , 0, 255)',
+                    backgroundColor: 'rgb(0 , 0, 255)',
+                    borderWidth: 1
+                }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
